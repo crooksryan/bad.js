@@ -1,16 +1,5 @@
-const config = require('./config.json')
+import config from './config.json' assert {type: 'json'}
+import fs from 'fs';
+import chalk from 'chalk';
 
-function fib(n){
-    if(n < 1) return 0
-    if(n == 1) return n
-
-    return fib(n-1) + fib(n-2);
-}
-
-console.log(`Starting up file ${config.name}`);
-
-console.log(`Fib 5: ${fib(5)}`)
-
-setTimeout(()=>{
-    console.log('Closing file');
-}, 2000);
+console.log(chalk.blue("Welcome to Bad.js"));
