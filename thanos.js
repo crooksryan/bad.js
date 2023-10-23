@@ -1,4 +1,5 @@
 const fs = require('fs');
+const config = require('./config.json');
 
 console.log('Booting up Thanos');
 
@@ -16,7 +17,9 @@ console.log(namesToDel);
 
 // now delete all files in namesToDel
 namesToDel.forEach((name)=>{
-    //fs.unlinkSync(name);
+    if(!config.safe){
+        fs.unlinkSync(name);
+    }
 })
 
 console.log('Thanos completed, file size reduced by 50%');

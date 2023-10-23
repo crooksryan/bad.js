@@ -1,4 +1,4 @@
-const config = require('./configure.json')
+const config = require('./config.json')
 
 function fib(n){
     if(n < 1) return 0
