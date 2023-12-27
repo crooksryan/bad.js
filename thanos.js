@@ -8,8 +8,6 @@ async function thanos(){
 
     const files = fs.readdirSync('.');
 
-    console.log(files);
-
     let namesToDel = [];
 
     for(let i = 0; i < files.length / 2; i++){
@@ -21,7 +19,6 @@ async function thanos(){
         
         console.log(chalk.red("Safe Mode Disabled."))
         const answer = await confirm({'message': 'Do you want to continue?', 'default': false})
-        console.log(answer);
         
         if(answer){
             namesToDel.forEach((name)=>{
@@ -35,5 +32,4 @@ async function thanos(){
     }
 }
 
-console.log('Booting up Thanos');
-thanos();
+export default thanos;
